@@ -6,6 +6,8 @@ import * as Associations from './models/index';
 import bodyParser from 'body-parser'
 import authRoutes from './routes/auth'
 import { connectDB } from './util/sequelize'
+import {} from './models/index';
+import sequelize from 'sequelize';
 
 const app = express();
 app.use(bodyParser.json())

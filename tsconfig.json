@@ -12,6 +12,7 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictNullChecks": false
   }
 }
