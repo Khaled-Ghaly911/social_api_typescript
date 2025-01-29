@@ -11,13 +11,14 @@ export class Like extends Model {
     @Column({ type: DataType.INTEGER })
     userId!: number;
 
-    @BelongsTo(() => User)
-    user!: User;
-
+    
     @ForeignKey(() => Post)
     @Column({ type: DataType.INTEGER })
     postId!: number;
-
+    
+    @BelongsTo(() => User)
+    user!: User;
+    
     @BelongsTo(() => Post)
     post!: Post;
 }
