@@ -8,6 +8,6 @@ router.get('/getLike', likeController.getLike);
 
 router.post('/addLike', likeController.addLike);
 
-router.post('/removeComment', likeController.removeLike);
+router.post('/removeLike', likeController.removeLike);
 
 export default router;

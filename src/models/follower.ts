@@ -1,22 +1,20 @@
-import { Table, Column, DataType, ForeignKey, Model, BelongsTo } from "sequelize-typescript";
-import { User } from "./user";
+// src/models/Follower.ts
+import { Table, Column, Model, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { User } from './user';
 
 @Table({ tableName: 'followers' })
-export class Follower extends Model {
-    @Column({ type: DataType.INTEGER, autoIncrement: true, primaryKey: true })
-    id!: number;
+export class Follower extends Model<Follower> {
+  @ForeignKey(() => User)
+  @Column
+  followerId: number; 
 
-    @ForeignKey(() => User)
-    @Column({ type: DataType.INTEGER })
-    followerId!: number;
+  @ForeignKey(() => User)
+  @Column
+  followingId: number; 
 
-    @BelongsTo(() => User, { foreignKey: 'followerId' })
-    follower!: User;
+  @BelongsTo(() => User, { foreignKey: 'followerId', as: 'follower' })
+  follower: User;
 
-    @ForeignKey(() => User)
-    @Column({ type: DataType.INTEGER })
-    followingId!: number;
-
-    @BelongsTo(() => User, { foreignKey: 'followingId' })
-    following!: User;
+  @BelongsTo(() => User, { foreignKey: 'followingId', as: 'following' })
+  following: User;
 }

@@ -26,14 +26,14 @@ __decorate([
     __metadata("design:type", Number)
 ], Like.prototype, "userId", void 0);
 __decorate([
-    (0, sequelize_typescript_1.BelongsTo)(() => user_1.User),
-    __metadata("design:type", user_1.User)
-], Like.prototype, "user", void 0);
-__decorate([
     (0, sequelize_typescript_1.ForeignKey)(() => post_1.Post),
     (0, sequelize_typescript_1.Column)({ type: sequelize_typescript_1.DataType.INTEGER }),
     __metadata("design:type", Number)
 ], Like.prototype, "postId", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsTo)(() => user_1.User),
+    __metadata("design:type", user_1.User)
+], Like.prototype, "user", void 0);
 __decorate([
     (0, sequelize_typescript_1.BelongsTo)(() => post_1.Post),
     __metadata("design:type", post_1.Post)
